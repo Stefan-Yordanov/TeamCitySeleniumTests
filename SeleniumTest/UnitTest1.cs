@@ -24,7 +24,7 @@ namespace SeleniumTest
         [Test]
         public void SimpleTest()
         {
-            Assert.AreEqual(1,1);
+            Assert.AreEqual(1,2);
         }
     }
 }
