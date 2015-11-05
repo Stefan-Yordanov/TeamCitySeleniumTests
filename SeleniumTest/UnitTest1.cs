@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace SeleniumTest
 {
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [Test]
         public void TestMethod1()
         {
             using (var driver = new FirefoxDriver())
@@ -19,7 +21,12 @@ namespace SeleniumTest
                     .First(a => a.Text.Equals("About", StringComparison.InvariantCultureIgnoreCase)).Click();
                 Assert.AreEqual(driver.Url, "http://localhost:5956/Home/About");
             }
-            
+        }
+
+        [Test]
+        public void SimpleTest()
+        {
+            Assert.AreEqual(1,2);
         }
     }
 }
