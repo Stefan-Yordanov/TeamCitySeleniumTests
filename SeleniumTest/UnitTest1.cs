@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace SeleniumTest
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
         [Test]
-        public void TestMethod1()
+        public void SeleniumTets()
         {
             using (var driver = new FirefoxDriver())
             {
@@ -26,7 +24,7 @@ namespace SeleniumTest
         [Test]
         public void SimpleTest()
         {
-            Assert.AreEqual(1,2);
+            Assert.AreEqual(1,3);
         }
     }
 }
