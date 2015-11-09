@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using System.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -19,8 +20,9 @@ namespace SeleniumTest
             //using (var driver = new EdgeDriver())
             {
                 driver.Navigate().GoToUrl("http://localhost:5956");
-                driver.FindElements(By.TagName("a"))
-                    .First(a => a.Text.Equals("About", StringComparison.InvariantCultureIgnoreCase)).Click();
+                driver.GetScreenshot().SaveAsFile("data.png",ImageFormat.Png);
+                System.IO.File.WriteAllText("Text.txt",driver.FindElement(By.TagName("innerHTML")).Text);
+                driver.FindElements(By.TagName("a")).First(a => a.Text.Equals("About", StringComparison.InvariantCultureIgnoreCase)).Click();
                 Assert.AreEqual(driver.Url, "http://localhost:5956/Home/About");
             }
         }
