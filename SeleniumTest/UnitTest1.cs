@@ -2,7 +2,10 @@
 using System.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.IE;
 
 namespace SeleniumTest
 {
@@ -12,7 +15,8 @@ namespace SeleniumTest
         [Test]
         public void SeleniumTets()
         {
-            using (var driver = new FirefoxDriver())
+            using (var driver = new FirefoxDriver(new FirefoxBinary("D:\\Program Files\\Mozilla Firefox\\firefox.exe"), new FirefoxProfile()))
+            //using (var driver = new EdgeDriver())
             {
                 driver.Navigate().GoToUrl("http://localhost:5956");
                 driver.FindElements(By.TagName("a"))
