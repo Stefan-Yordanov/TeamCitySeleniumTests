@@ -20,7 +20,8 @@ namespace SeleniumTest
             //using (var driver = new EdgeDriver())
             {
                 System.Threading.Thread.Sleep(10000);
-                driver.Navigate().GoToUrl("http://localhost:5956/Home");
+                driver.Manage().Window.Maximize();
+                driver.Navigate().GoToUrl("http://localhost:5956");
 
                 //driver.Navigate().GoToUrl("http://localhost:5956");
                 driver.GetScreenshot().SaveAsFile("data.png",ImageFormat.Png);
