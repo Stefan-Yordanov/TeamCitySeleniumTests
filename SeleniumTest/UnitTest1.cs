@@ -24,7 +24,6 @@ namespace SeleniumTest
 
                 //driver.Navigate().GoToUrl("http://localhost:5956");
                 driver.GetScreenshot().SaveAsFile("data.png",ImageFormat.Png);
-                System.IO.File.WriteAllText("Text.txt",driver.FindElement(By.TagName("innerHTML")).Text);
                 driver.FindElements(By.TagName("a")).First(a => a.Text.Equals("About", StringComparison.InvariantCultureIgnoreCase)).Click();
                 Assert.AreEqual(driver.Url, "http://localhost:5956/Home/About");
             }
