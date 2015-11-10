@@ -19,7 +19,7 @@ namespace SeleniumTest
             using (var driver = new FirefoxDriver(new FirefoxBinary("D:\\Program Files\\Mozilla Firefox\\firefox.exe"), new FirefoxProfile()))
             //using (var driver = new EdgeDriver())
             {
-                System.Threading.Thread.Sleep(10000);
+                //System.Threading.Thread.Sleep(10000);
                 driver.Manage().Window.Maximize();
                 driver.Navigate().GoToUrl("http://localhost:5956");
 
