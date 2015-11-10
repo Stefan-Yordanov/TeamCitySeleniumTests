@@ -19,8 +19,8 @@ namespace SeleniumTest
             using (var driver = new FirefoxDriver(new FirefoxBinary("D:\\Program Files\\Mozilla Firefox\\firefox.exe"), new FirefoxProfile()))
             //using (var driver = new EdgeDriver())
             {
-                System.Threading.Thread.Sleep(2000);
-                driver.Navigate().GoToUrl("http://localhost:5956");
+                //System.Threading.Thread.Sleep(2000);
+                driver.Navigate().GoToUrl("http://localhost:5956/Home");
 
                 //driver.Navigate().GoToUrl("http://localhost:5956");
                 driver.GetScreenshot().SaveAsFile("data.png",ImageFormat.Png);
